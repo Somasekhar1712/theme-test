@@ -1,27 +1,50 @@
-#container {
+@keyframes spin {
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin var(--speed) linear infinite;
+}
+.btn-group{
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+}
+.dropdown-menu{
+  min-width: 6rem;
+  background-color: #0333ff;
+}
+.dropdown-item{
+  color: #fff;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-card {
+  border-radius: 40px;
+  width: 340px;
+  display: inline-table;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ion-color-light);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-card ion-card-subtitle, ion-card ion-card-title{
+  color: #0333ff;
 }
-
-#container a {
+ion-card-header,
+ion-card-content{
+  text-align: center;
+}
+ion-card a{
   text-decoration: none;
+  color: #0333ff;
+  display: block;
 }
+ion-card img{
+  border-radius: 40px;
+}
+
+

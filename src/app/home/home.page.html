@@ -1,20 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="container">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Theme
+    </button>
+    <div class="dropdown-menu dropdown-menu-center">
+      <button class="dropdown-item" type="button" color="medium" (click)="changeTheme('light')">White</button>
+      <button class="dropdown-item" type="button" color="medium" (click)="changeTheme('green')">Green</button>
+      <button class="dropdown-item" type="button" color="medium" (click)="changeTheme('yellow')">Yellow</button>
+    </div>
   </div>
+
+  <ion-card *ngFor="let article of articles">
+    <img src="{{article.image}}" />
+    <ion-card-header>
+      <ion-card-subtitle>{{article.agency}}</ion-card-subtitle>
+      <ion-card-title>{{article.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <a href="{{article.wikipedia}}" target="_blank" rel="noopener noreferrer"><i class="fa fa-wikipedia-w" aria-hidden="true"></i></a>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
